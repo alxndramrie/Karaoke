@@ -1,0 +1,474 @@
+
+/* ==========================================
+   SINGSPACE - GLOBAL STYLING
+========================================== */
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f5efff;
+  background: #130d23;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #130d23 0%,
+    #26163e 50%,
+    #141027 100%
+  );
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #a678ff;
+  color: #170d29;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #bb9aff;
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  background: #302546;
+  color: white;
+  border: 1px solid #665181;
+  border-radius: 10px;
+}
+
+input:focus {
+  outline: 2px solid #a678ff;
+}
+
+a {
+  color: #cbb0ff;
+  overflow-wrap: anywhere;
+}
+
+/* ==========================================
+   PAGE LAYOUT
+========================================== */
+
+.layout {
+  width: min(1200px, 95%);
+  margin: 0 auto;
+  padding: 30px 0 60px;
+}
+
+.phone {
+  width: min(500px, 95%);
+  margin: 60px auto;
+}
+
+.panel {
+  background: rgba(35, 25, 57, 0.95);
+  padding: 25px;
+  border: 1px solid #594476;
+  border-radius: 20px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.hero {
+  text-align: center;
+  padding: 35px 25px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 50px);
+  margin: 10px 0;
+  color: #e4d3ff;
+}
+
+.hero p {
+  color: #c7b8df;
+  line-height: 1.6;
+}
+
+.eyebrow {
+  color: #bb93ff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.small {
+  font-size: 13px;
+  color: #bcb0d1;
+  line-height: 1.6;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.twoCol .panel {
+  min-width: 0;
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status {
+  display: inline-block;
+  padding: 10px 14px;
+  margin: 15px 0;
+  border: 1px solid #6d568e;
+  border-radius: 10px;
+  color: #d6c6f2;
+  background: #392b51;
+}
+
+.status.online {
+  background: #183d31;
+  border-color: #398e69;
+  color: #a1f4cf;
+}
+
+/* ==========================================
+   YOUTUBE KARAOKE PLAYER
+========================================== */
+
+.karaoke-player {
+  text-align: center;
+}
+
+.karaoke-player h2 {
+  color: #e4d3ff;
+}
+
+.karaoke-player h3 {
+  font-size: 22px;
+}
+
+.youtube-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #000;
+}
+
+.youtube-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.empty-player {
+  min-height: 260px;
+  background: #191227;
+  border: 2px dashed #604681;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.empty-icon {
+  font-size: 55px;
+}
+
+.empty-player h3 {
+  margin-bottom: 5px;
+}
+
+.empty-player p {
+  color: #ad9fc4;
+}
+
+.secondary-button {
+  margin-top: 10px;
+  background: #45335e;
+  color: #fff;
+}
+
+/* ==========================================
+   SONG LIBRARY
+========================================== */
+
+.song-library h2 {
+  color: #e5d5ff;
+  margin-top: 0;
+}
+
+.song-search {
+  margin: 15px 0 20px;
+  padding: 15px;
+}
+
+.song-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.song-categories button {
+  background: #382b54;
+  color: #e7dbff;
+  border: 1px solid #665181;
+}
+
+.song-categories button.active {
+  background: #a678ff;
+  color: #170d29;
+}
+
+.song-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(220px, 1fr)
+  );
+  gap: 20px;
+}
+
+.song-card {
+  overflow: hidden;
+  background: #302546;
+  border: 1px solid #584574;
+  border-radius: 14px;
+  transition: 0.2s;
+}
+
+.song-card:hover {
+  transform: translateY(-3px);
+  border-color: #b190ee;
+}
+
+.song-thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.song-info {
+  padding: 16px;
+}
+
+.song-info h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.song-info p {
+  margin: 0 0 10px;
+  color: #bdb0d2;
+}
+
+.song-category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #533c78;
+  font-size: 12px;
+}
+
+.song-info button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* ==========================================
+   QR CODE
+========================================== */
+
+.qr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  width: fit-content;
+  min-width: 230px;
+  min-height: 230px;
+  margin: 20px auto;
+  color: #222;
+}
+
+.qr img {
+  max-width: 100%;
+  height: auto;
+}
+
+.room {
+  font-size: 16px;
+  text-align: center;
+}
+
+.micLink {
+  display: block;
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+/* ==========================================
+   MICROPHONE CONTROLS
+========================================== */
+
+.singerRow {
+  background: #302546;
+  border: 1px solid #584574;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.singerVolume {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.singerVolume input {
+  width: 100%;
+  accent-color: #ae82ff;
+  cursor: pointer;
+}
+
+.bigButton {
+  width: 100%;
+  margin: 20px 0;
+  padding: 16px;
+  font-size: 17px;
+}
+
+.phone label {
+  display: block;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.dividerText {
+  margin: 15px 0;
+  color: #ac9abd;
+  text-align: center;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 768px) {
+  .layout {
+    width: 95%;
+    padding-top: 15px;
+  }
+
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 18px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .song-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .song-info {
+    padding: 12px;
+  }
+
+  .song-info h3 {
+    font-size: 14px;
+  }
+
+  .phone {
+    margin: 25px auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .song-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* YOUTUBE LIVE SEARCH */
+
+.youtube-search-form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.youtube-search-form .song-search {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.youtube-search-form button {
+  flex-shrink: 0;
+  padding: 15px 22px;
+  white-space: nowrap;
+}
+
+.search-results-title {
+  margin: 24px 0 18px;
+  color: #e7d7ff;
+}
+
+.search-error {
+  padding: 14px;
+  margin: 15px 0;
+  background: #51283c;
+  color: #ffe0e8;
+  border: 1px solid #b45c78;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .youtube-search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .youtube-search-form button {
+    width: 100%;
+  }
+}
